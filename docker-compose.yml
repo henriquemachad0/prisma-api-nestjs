@@ -7,6 +7,7 @@ services:
     container_name: prismaapi-app
     ports:
       - "3000:3000"
+      - "5555:5555"
     volumes:
       - .:/home/node/app
     depends_on:
@@ -14,7 +15,7 @@ services:
 
   db:
     build: .docker/postgres
-    container_name: prismaapi-fb
+    container_name: prismaapi-db
     restart: always
     tty: true
     ports:

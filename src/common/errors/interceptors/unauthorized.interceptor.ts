@@ -5,8 +5,7 @@ import {
   CallHandler,
   UnauthorizedException,
 } from '@nestjs/common';
-import { Observable } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Observable, catchError } from 'rxjs';
 import { UnauthorizedError } from '../types/UnauthorizedError';
 
 @Injectable()

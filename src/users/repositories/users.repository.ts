@@ -40,6 +40,14 @@ export class UsersRepository {
       where: {
         id,
       },
+      include: {
+        posts: {
+          select: {
+            title: true,
+            created_at: true,
+          },
+        },
+      },
     });
   }
 
@@ -64,6 +72,14 @@ export class UsersRepository {
     return this.prisma.user.delete({
       where: {
         id,
+      },
+      include: {
+        posts: {
+          select: {
+            title: true,
+            created_at: true,
+          },
+        },
       },
     });
   }
